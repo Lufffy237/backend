@@ -1,0 +1,15 @@
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-22 11:35:01"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-22 11:59:58"}
+{"level":"error","message":"401 - Non autorisé : Aucun token fourni - /api/users - GET - ::1","timestamp":"2026-10-26 17:06:56"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-26 17:09:28"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-26 17:13:12"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-26 17:22:34"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-26 17:25:18"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-26 17:26:30"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-26 17:35:22"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-26 17:38:12"}
+{"level":"error","message":"401 - Non autorisé : Token invalide ou expiré - /api/dashboard/stats - GET - ::1","timestamp":"2026-10-26 18:15:51"}
+{"level":"error","message":"401 - Non autorisé : Token invalide ou expiré - /api/dashboard/stats - GET - ::1","timestamp":"2026-10-26 18:15:51"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/job-offers/public?page=1&limit=6 - GET - ::1","timestamp":"2026-10-28 11:02:30"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/job-offers/public?page=1&limit=6 - GET - ::1","timestamp":"2026-10-28 11:02:31"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/job-offers/public?page=1&limit=6&type=EMPLOI - GET - ::1","timestamp":"2026-10-28 11:02:43"}

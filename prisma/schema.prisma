@@ -1,0 +1,243 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ==========================================
+// UTILISATEURS & AUTHENTIFICATION
+// ==========================================
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role     @default(EDITOR)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  articles Article[]
+
+  @@map("users")
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  EDITOR
+}
+
+// ==========================================
+// BLOG & ARTICLES
+// ==========================================
+
+model Article {
+  id          String   @id @default(uuid())
+  title       String
+  slug        String   @unique
+  content     String
+  excerpt     String?
+  coverImage  String?
+  readTime    String?
+  tags        String[]
+  published   Boolean  @default(false)
+  
+  categoryId  String?
+  category    Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  
+  authorId    String
+  author      User     @relation(fields: [authorId], references: [id])
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("articles")
+}
+
+model Category {
+  id        String    @id @default(uuid())
+  name      String    @unique
+  slug      String    @unique
+  articles  Article[]
+
+  @@map("categories")
+}
+
+// ==========================================
+// AGENCES & DÉPÔTS
+// ==========================================
+
+model Agency {
+  id          String   @id @default(uuid())
+  name        String
+  type        AgencyType
+  country     String
+  city        String
+  province    String?
+  address     String
+  phone       String?
+  email       String?
+  hours       String?
+  latitude    Float?
+  longitude   Float?
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("agencies")
+}
+
+enum AgencyType {
+  AGENCY
+  DEPOT
+}
+
+// ==========================================
+// OFFRES D'EMPLOI & STAGES
+// ==========================================
+
+model JobOffer {
+  id            String   @id @default(uuid())
+  title         String
+  slug          String   @unique
+  type          JobType
+  location      String
+  contract      String?
+  description   String
+  missions      String[]
+  profile       String?
+  howToApply    String?
+  views         Int      @default(0)
+  active        Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("job_offers")
+}
+
+enum JobType {
+  EMPLOI
+  STAGE
+}
+
+// ==========================================
+// GALERIE (IMAGES & VIDÉOS)
+// ==========================================
+
+model GalleryImage {
+  id            String         @id @default(uuid())
+  type          GalleryItemType
+  category      GalleryCategory
+  title         String
+  url           String
+  thumbnail     String?
+  videoUrl      String?
+  videoPlatform String?
+  videoId       String?
+  views         Int            @default(0)
+  duration      String?
+  likes         Int            @default(0)
+  downloads     Int            @default(0)
+  location      String?
+  uploadedAt    DateTime       @default(now())
+
+  @@map("gallery_images")
+}
+
+enum GalleryItemType {
+  IMAGE
+  VIDEO
+}
+
+enum GalleryCategory {
+  EVENEMENTS
+  EQUIPES
+  PRESTATIONS
+  AGENCES
+  DISTINCTIONS
+}
+
+// ==========================================
+// FAQ
+// ==========================================
+
+model FAQ {
+  id        String   @id @default(uuid())
+  question  String
+  answer    String
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("faqs")
+}
+
+// ==========================================
+// DEMANDES DE CONTACT
+// ==========================================
+
+model ContactRequest {
+  id          String        @id @default(uuid())
+  title       String?
+  firstName   String
+  lastName    String
+  email       String
+  phone       String?
+  subject     String
+  message     String
+  attachments String[]
+  offerId     String?       // Pour lier une candidature à une offre
+  status      ContactStatus @default(NEW)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@map("contact_requests")
+}
+
+enum ContactStatus {
+  NEW
+  IN_PROGRESS
+  RESOLVED
+  ARCHIVED
+}
+
+// ==========================================
+// CONTENU PAGE D'ACCUEIL
+// ==========================================
+
+model KeyFigure {
+  id        String   @id @default(uuid())
+  label     String
+  value     String
+  icon      String?
+  order     Int      @default(0)
+
+  @@map("key_figures")
+}
+
+model Partner {
+  id        String   @id @default(uuid())
+  name      String
+  logo      String?
+  website   String?
+  order     Int      @default(0)
+
+  @@map("partners")
+}
+
+model Award {
+  id        String   @id @default(uuid())
+  title     String
+  year      Int
+  issuer    String?
+  image     String?
+  order     Int      @default(0)
+
+  @@map("awards")
+}

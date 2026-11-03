@@ -1,0 +1,189 @@
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-22 10:24:18"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-22 10:24:18"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-22 10:24:18"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-22 10:47:31"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-22 10:47:31"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-22 10:47:31"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-22 11:35:01"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-22 11:59:58"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-26 17:00:49"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-26 17:00:49"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-26 17:00:49"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-26 17:03:45"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-26 17:03:45"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-26 17:03:45"}
+{"level":"error","message":"401 - Non autorisé : Aucun token fourni - /api/users - GET - ::1","timestamp":"2026-10-26 17:06:56"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-26 17:09:28"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-26 17:13:03"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-26 17:13:03"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-26 17:13:03"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-26 17:13:12"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-26 17:16:54"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-26 17:16:54"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-26 17:16:54"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-26 17:17:32"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-26 17:17:32"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-26 17:17:32"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-26 17:21:52"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-26 17:21:52"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-26 17:21:52"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-26 17:22:34"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-26 17:25:18"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-26 17:26:30"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-26 17:30:12"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-26 17:30:12"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-26 17:30:12"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-26 17:35:22"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-26 17:38:02"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-26 17:38:02"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-26 17:38:02"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/auth/login - POST - ::1","timestamp":"2026-10-26 17:38:12"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-26 17:41:05"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-26 17:41:05"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-26 17:41:05"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-26 17:45:29"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-26 17:45:29"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-26 17:45:29"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-26 17:53:07"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-26 17:53:07"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-26 17:53:07"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-26 17:53:48"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-26 17:53:49"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-26 17:53:49"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-26 18:09:20"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-26 18:09:20"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-26 18:09:20"}
+{"level":"error","message":"401 - Non autorisé : Token invalide ou expiré - /api/dashboard/stats - GET - ::1","timestamp":"2026-10-26 18:15:51"}
+{"level":"error","message":"401 - Non autorisé : Token invalide ou expiré - /api/dashboard/stats - GET - ::1","timestamp":"2026-10-26 18:15:51"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-27 14:54:05"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-27 14:54:05"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-27 14:54:05"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-27 14:55:58"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-27 14:55:58"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-27 14:55:58"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-27 14:56:34"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-27 14:56:34"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-27 14:56:34"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-27 15:57:01"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-27 15:57:02"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-27 15:57:02"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-27 16:11:47"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-27 16:11:47"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-27 16:11:47"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-27 16:34:30"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-27 16:34:30"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-27 16:34:30"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-27 17:50:22"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-27 17:50:22"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-27 17:50:22"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-28 09:50:45"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-28 09:50:45"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-28 09:50:45"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-28 10:22:48"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-28 10:22:48"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-28 10:22:48"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-28 10:23:43"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-28 10:23:43"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-28 10:23:43"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-28 10:47:26"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-28 10:47:26"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-28 10:47:26"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-28 11:02:22"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-28 11:02:22"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-28 11:02:22"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/job-offers/public?page=1&limit=6 - GET - ::1","timestamp":"2026-10-28 11:02:30"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/job-offers/public?page=1&limit=6 - GET - ::1","timestamp":"2026-10-28 11:02:31"}
+{"level":"error","message":"500 - Erreur interne du serveur - /api/job-offers/public?page=1&limit=6&type=EMPLOI - GET - ::1","timestamp":"2026-10-28 11:02:43"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-28 11:14:50"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-28 11:14:50"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-28 11:14:50"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-28 11:19:35"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-28 11:19:35"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-28 11:19:35"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-28 11:28:02"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-28 11:28:02"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-28 11:28:02"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-28 12:32:44"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-28 12:32:44"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-28 12:32:44"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-28 12:54:00"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-28 12:54:00"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-28 12:54:00"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-28 13:14:51"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-28 13:14:51"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-28 13:14:51"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-28 13:15:14"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-28 13:15:14"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-28 13:15:14"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-28 13:51:20"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-28 13:51:20"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-28 13:51:20"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-28 13:55:46"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-28 13:55:46"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-28 13:55:46"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-10-28 13:56:15"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-10-28 13:56:15"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-10-28 13:56:15"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:04:55"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:04:55"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:04:55"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:30:49"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:30:49"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:30:49"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:31:11"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:31:11"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:31:11"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:31:36"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:31:36"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:31:36"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:32:28"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:32:28"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:32:28"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:32:54"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:32:54"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:32:54"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:33:07"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:33:07"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:33:07"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:33:18"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:33:18"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:33:18"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:33:56"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:33:56"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:33:56"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:34:38"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:34:38"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:34:38"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:35:59"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:35:59"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:35:59"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:36:34"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:36:34"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:36:34"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:37:04"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:37:04"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:37:04"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:37:30"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:37:30"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:37:30"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:37:49"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:37:49"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:37:49"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:38:16"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:38:16"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:38:16"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:43:13"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:43:13"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:43:13"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:43:25"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:43:25"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:43:25"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:43:56"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:43:56"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:43:56"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:47:10"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:47:10"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:47:10"}
+{"level":"info","message":"🚀 Serveur backend démarré sur http://localhost:5000","timestamp":"2026-11-03 14:47:53"}
+{"level":"info","message":"📍 Health check: http://localhost:5000/api/health","timestamp":"2026-11-03 14:47:53"}
+{"level":"info","message":"🔧 Environnement: development","timestamp":"2026-11-03 14:47:53"}
