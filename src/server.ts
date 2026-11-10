@@ -35,7 +35,7 @@ app.use(helmet());
 
 // Configuration CORS
 app.use(cors({
-  origin: ['https://votre-frontend.vercel.app', 'http://localhost:3000'], // Ajoutez l'URL Vercel ici
+  origin: ['https://frontend-1-coral-nine.vercel.app/', 'http://localhost:3000'], // Ajoutez l'URL Vercel ici
   credentials: true,
 }));
 
