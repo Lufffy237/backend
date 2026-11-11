@@ -34,7 +34,7 @@ const PORT = process.env.PORT || 5000;
 app.use((0, helmet_1.default)());
 // Configuration CORS
 app.use((0, cors_1.default)({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: ['https://frontend-1-coral-nine.vercel.app/', 'http://localhost:3000'], // Ajoutez l'URL Vercel ici
     credentials: true,
 }));
 // ⚠️ CRUCIAL : Parser le JSON et les formulaires AVANT les routes
