@@ -37,8 +37,8 @@ app.use(helmet());
 // ✅ CONFIGURATION CORS SÉCURISÉE AVEC ORIGINES EXPLICITES
 app.use(cors({
   origin: [
-    'https://frontend-1-mmbfmhkwl-luffy237s-projects.vercel.app', 
-    'https://elp.up.railway.app',                                 
+    'https://frontend-1-coral-nine.vercel.app', 
+    'elegance-pressing.up.railway.app',                                 
     'http://localhost:3000',                                      
     'http://localhost:5000'                                       
   ],
@@ -84,10 +84,10 @@ app.use('/api/upload', uploadRoutes);
 app.use('/api/partners', partnerRoutes);
 app.use('/api/awards', awardRoutes);
 
-// ✅ CORRECTION SPÉCIFIQUE : Route /public pour correspondre exactement au fetch du frontend
-// Le frontend appelle '/api/agencies/public', on s'assure que ça matche
+// ✅ CORRECTION SPÉCIFIQUE : Réécriture d'URL interne (req.path est read-only en TS)
+// Le frontend appelle '/api/agencies/public', on réécrit l'URL pour qu'elle matche la racine du router
 app.get('/api/agencies/public', (req, res, next) => {
-  req.path = '/'; 
+  req.url = '/'; 
   agencyRoutes(req, res, next);
 });
 
