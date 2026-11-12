@@ -26,18 +26,17 @@ dotenv.config();
 const app: Application = express();
 const PORT = process.env.PORT || 5000;
 
-// ✅ OBLIGATOIRE POUR RAILWAY
+// ✅ 1. OBLIGATOIRE POUR RAILWAY (Corrige l'erreur X-Forwarded-For)
 app.set('trust proxy', 1);
 
-app.use(helmet());
-
-// ✅ CONFIGURATION CORS LA PLUS SIMPLE ET RADICALE POSSIBLE
+// ✅ 2. CORS OUVERT (Temporairement pour éliminer toute erreur de blocage)
 app.use(cors({
-  origin: '*', // On ouvre tout temporairement pour valider que le serveur tourne
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 
+app.use(helmet());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
@@ -54,7 +53,16 @@ if (!fs.existsSync(uploadsPath)) {
 }
 app.use('/uploads', express.static(uploadsPath));
 
+// ✅ 3. ROUTES
 app.use('/api/auth', authRoutes);
+
+// ✅ ASTUCE CRUCIALE : Le frontend appelle /api/agencies/public
+// On réécrit l'URL en interne pour que le router des agences le traite comme une demande de liste ('/')
+app.get('/api/agencies/public', (req, res, next) => {
+  (req as any).url = '/'; 
+  agencyRoutes(req, res, next);
+});
+
 app.use('/api/agencies', agencyRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/dashboard', dashboardRoutes);
