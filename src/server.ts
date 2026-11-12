@@ -21,48 +21,26 @@ import uploadRoutes from './routes/upload.routes';
 import awardRoutes from './routes/award.routes';
 import partnerRoutes from './routes/partner.routes';
 
-// 1. Charger les variables d'environnement
 dotenv.config();
 
 const app: Application = express();
 const PORT = process.env.PORT || 5000;
 
-// ✅ CORRECTION CRUCIALE POUR RAILWAY : Faire confiance au proxy inverse
+// ✅ OBLIGATOIRE POUR RAILWAY
 app.set('trust proxy', 1);
 
-// ==========================================
-// 2. MIDDLEWARES GLOBAUX (SÉCURITÉ & PARSING)
-// ==========================================
-
-// Sécurité des headers HTTP
 app.use(helmet());
 
-// ✅ CONFIGURATION CORS "SMART" (Accepte automatiquement tous les domaines Vercel et Railway)
+// ✅ CONFIGURATION CORS LA PLUS SIMPLE ET RADICALE POSSIBLE
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin) return callback(null, true);
-    
-    if (
-      origin.endsWith('.vercel.app') || 
-      origin.endsWith('.railway.app') || 
-      origin.startsWith('http://localhost') ||
-      origin === 'https://elegance-pressing.com'
-    ) {
-      return callback(null, true);
-    }
-    
-    callback(new Error('Not allowed by CORS'));
-  },
-  credentials: true,
+  origin: '*', // On ouvre tout temporairement pour valider que le serveur tourne
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 
-// ⚠️ CRUCIAL : Parser le JSON et les formulaires AVANT les routes
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// Rate limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
@@ -70,19 +48,12 @@ const limiter = rateLimit({
 });
 app.use('/api/', limiter);
 
-// ==========================================
-// 3. ROUTES STATIQUES & UPLOADS
-// ==========================================
 const uploadsPath = path.join(__dirname, '../uploads');
 if (!fs.existsSync(uploadsPath)) {
-  logger.warn('⚠️ Dossier uploads inexistant. Création automatique...');
   fs.mkdirSync(uploadsPath, { recursive: true });
 }
 app.use('/uploads', express.static(uploadsPath));
 
-// ==========================================
-// 4. ROUTES API (après le parsing JSON)
-// ==========================================
 app.use('/api/auth', authRoutes);
 app.use('/api/agencies', agencyRoutes);
 app.use('/api/users', userRoutes);
@@ -95,30 +66,15 @@ app.use('/api/upload', uploadRoutes);
 app.use('/api/partners', partnerRoutes);
 app.use('/api/awards', awardRoutes);
 
-// Route de test (Health check)
 app.get('/api/health', (_req, res) => {
-  res.json({
-    status: 'OK',
-    message: 'Backend Élégance Pressing opérationnel',
-    timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV,
-  });
+  res.json({ status: 'OK', message: 'Backend opérationnel', timestamp: new Date().toISOString() });
 });
 
-// ==========================================
-// 5. GESTION DES ERREURS (TOUJOURS EN DERNIER)
-// ==========================================
 app.use(errorHandler);
 
-// ==========================================
-// 6. DÉMARRAGE DU SERVEUR
-// ==========================================
 app.listen(PORT, () => {
   logger.info(`🚀 Serveur backend démarré sur le port ${PORT}`);
-  logger.info(`📍 Health check: /api/health`);
-  logger.info(`🔧 Environnement: ${process.env.NODE_ENV || 'development'}`);
-  logger.info(`🛡️ CORS: Restreint aux origines autorisées uniquement`);
-  logger.info(`🌐 Trust Proxy: Activé pour Railway`);
+  logger.info(`🌐 CORS: Ouvert à toutes les origines (*)`);
 });
 
 export default app;
