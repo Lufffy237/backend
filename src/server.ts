@@ -34,13 +34,13 @@ const PORT = process.env.PORT || 5000;
 // Sécurité des headers HTTP
 app.use(helmet());
 
-// ✅ CONFIGURATION CORS SÉCURISÉE AVEC ORIGINES EXPLICITES
+// ✅ CONFIGURATION CORS SÉCURISÉE AVEC ORIGINES EXPLICITES (HTTPS corrigé)
 app.use(cors({
   origin: [
-    'https://frontend-1-coral-nine.vercel.app', 
-    'elegance-pressing.up.railway.app',                                 
-    'http://localhost:3000',                                      
-    'http://localhost:5000'                                       
+    'https://frontend-1-coral-nine.vercel.app', // Votre URL Vercel (mettez à jour si elle change)
+    'https://elegance-pressing.up.railway.app', // URL publique de votre backend (avec https://)
+    'http://localhost:3000',                    // Dev Frontend
+    'http://localhost:5000'                     // Dev Backend
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
@@ -73,7 +73,7 @@ app.use('/uploads', express.static(uploadsPath));
 // 4. ROUTES API (après le parsing JSON)
 // ==========================================
 app.use('/api/auth', authRoutes);
-app.use('/api/agencies', agencyRoutes);
+app.use('/api/agencies', agencyRoutes); // Le routeur gère maintenant proprement ses propres chemins
 app.use('/api/users', userRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/articles', articleRoutes);
@@ -83,13 +83,6 @@ app.use('/api/gallery', galleryRoutes);
 app.use('/api/upload', uploadRoutes);
 app.use('/api/partners', partnerRoutes);
 app.use('/api/awards', awardRoutes);
-
-// ✅ CORRECTION SPÉCIFIQUE : Réécriture d'URL interne (req.path est read-only en TS)
-// Le frontend appelle '/api/agencies/public', on réécrit l'URL pour qu'elle matche la racine du router
-app.get('/api/agencies/public', (req, res, next) => {
-  req.url = '/'; 
-  agencyRoutes(req, res, next);
-});
 
 // Route de test (Health check)
 app.get('/api/health', (_req, res) => {

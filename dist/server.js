@@ -33,13 +33,13 @@ const PORT = process.env.PORT || 5000;
 // ==========================================
 // Sécurité des headers HTTP
 app.use((0, helmet_1.default)());
-// ✅ CONFIGURATION CORS SÉCURISÉE AVEC ORIGINES EXPLICITES
+// ✅ CONFIGURATION CORS SÉCURISÉE AVEC ORIGINES EXPLICITES (HTTPS corrigé)
 app.use((0, cors_1.default)({
     origin: [
-        'https://frontend-1-coral-nine.vercel.app',
-        'elegance-pressing.up.railway.app',
-        'http://localhost:3000',
-        'http://localhost:5000'
+        'https://frontend-1-coral-nine.vercel.app', // Votre URL Vercel (mettez à jour si elle change)
+        'https://elegance-pressing.up.railway.app', // URL publique de votre backend (avec https://)
+        'http://localhost:3000', // Dev Frontend
+        'http://localhost:5000' // Dev Backend
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
@@ -68,7 +68,7 @@ app.use('/uploads', express_1.default.static(uploadsPath));
 // 4. ROUTES API (après le parsing JSON)
 // ==========================================
 app.use('/api/auth', auth_routes_1.default);
-app.use('/api/agencies', agency_routes_1.default);
+app.use('/api/agencies', agency_routes_1.default); // Le routeur gère maintenant proprement ses propres chemins
 app.use('/api/users', user_routes_1.default);
 app.use('/api/dashboard', dashboard_routes_1.default);
 app.use('/api/articles', article_routes_1.default);
@@ -78,12 +78,6 @@ app.use('/api/gallery', gallery_routes_1.default);
 app.use('/api/upload', upload_routes_1.default);
 app.use('/api/partners', partner_routes_1.default);
 app.use('/api/awards', award_routes_1.default);
-// ✅ CORRECTION SPÉCIFIQUE : Réécriture d'URL interne (req.path est read-only en TS)
-// Le frontend appelle '/api/agencies/public', on réécrit l'URL pour qu'elle matche la racine du router
-app.get('/api/agencies/public', (req, res, next) => {
-    req.url = '/';
-    (0, agency_routes_1.default)(req, res, next);
-});
 // Route de test (Health check)
 app.get('/api/health', (_req, res) => {
     res.json({
