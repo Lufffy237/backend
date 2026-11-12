@@ -40,7 +40,7 @@ app.use(helmet());
 // ✅ CONFIGURATION CORS SÉCURISÉE AVEC ORIGINES EXPLICITES
 app.use(cors({
   origin: [
-    'https://frontend-1-hqc6ymxvc-luffy237s-projects.vercel.app', 
+    'https://frontend-1-coral-nine.vercel.app/', 
     'https://elegance-pressing.up.railway.app',                                 
     'http://localhost:3000',                                      
     'http://localhost:5000'                                       
