@@ -37,19 +37,16 @@ app.set('trust proxy', 1);
 // Sécurité des headers HTTP
 app.use(helmet());
 
-// ✅ CONFIGURATION CORS SÉCURISÉE AVEC ORIGINES EXPLICITES
 // ✅ CONFIGURATION CORS "SMART" (Accepte automatiquement tous les domaines Vercel et Railway)
 app.use(cors({
   origin: function (origin, callback) {
-    // Autoriser les requêtes sans origine (comme les tests ou les applications mobiles)
     if (!origin) return callback(null, true);
     
-    // Autoriser automatiquement tous les sous-domaines .vercel.app, .railway.app et localhost
     if (
       origin.endsWith('.vercel.app') || 
       origin.endsWith('.railway.app') || 
       origin.startsWith('http://localhost') ||
-      origin === 'https://elegance-pressing.com' // Votre futur vrai domaine
+      origin === 'https://elegance-pressing.com'
     ) {
       return callback(null, true);
     }
@@ -65,10 +62,10 @@ app.use(cors({
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// Rate limiting (protection contre les attaques par force brute)
+// Rate limiting
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // Limite chaque IP à 100 requêtes par fenêtre
+  windowMs: 15 * 60 * 1000,
+  max: 100,
   message: 'Trop de requêtes depuis cette IP, veuillez réessayer après 15 minutes',
 });
 app.use('/api/', limiter);
@@ -87,11 +84,7 @@ app.use('/uploads', express.static(uploadsPath));
 // 4. ROUTES API (après le parsing JSON)
 // ==========================================
 app.use('/api/auth', authRoutes);
-
-// ✅ CORRECTION : Exposer explicitement la route publique AVANT la route protégée
-// Si ton agencyRoutes a un router.get('/public', ...), cela sera automatiquement mappé ici.
 app.use('/api/agencies', agencyRoutes);
-
 app.use('/api/users', userRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/articles', articleRoutes);
