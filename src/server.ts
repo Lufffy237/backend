@@ -5,6 +5,8 @@ import dotenv from 'dotenv';
 import { rateLimit } from 'express-rate-limit';
 import { errorHandler } from './middlewares/errorHandler';
 import { logger } from './utils/logger';
+import path from 'path';
+import fs from 'fs';
 
 // Import des routes
 import authRoutes from './routes/auth.routes';
@@ -15,7 +17,6 @@ import articleRoutes from './routes/article.routes';
 import categoryRoutes from './routes/category.routes';
 import jobOfferRoutes from './routes/jobOffer.routes';
 import galleryRoutes from './routes/gallery.routes';
-import path from 'path';
 import uploadRoutes from './routes/upload.routes';
 import awardRoutes from './routes/award.routes';
 import partnerRoutes from './routes/partner.routes';
@@ -33,10 +34,17 @@ const PORT = process.env.PORT || 5000;
 // Sécurité des headers HTTP
 app.use(helmet());
 
-// Configuration CORS
+// ✅ CONFIGURATION CORS SÉCURISÉE AVEC ORIGINES EXPLICITES
 app.use(cors({
-  origin: ['https://frontend-1-coral-nine.vercel.app/', 'http://localhost:3000'], // Ajoutez l'URL Vercel ici
+  origin: [
+    'https://frontend-1-mmbfmhkwl-luffy237s-projects.vercel.app', 
+    'https://elp.up.railway.app',                                 
+    'http://localhost:3000',                                      
+    'http://localhost:5000'                                       
+  ],
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 
 // ⚠️ CRUCIAL : Parser le JSON et les formulaires AVANT les routes
@@ -52,9 +60,14 @@ const limiter = rateLimit({
 app.use('/api/', limiter);
 
 // ==========================================
-// 3. ROUTES STATIQUES
+// 3. ROUTES STATIQUES & UPLOADS
 // ==========================================
-app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+const uploadsPath = path.join(__dirname, '../uploads');
+if (!fs.existsSync(uploadsPath)) {
+  logger.warn('⚠️ Dossier uploads inexistant. Création automatique...');
+  fs.mkdirSync(uploadsPath, { recursive: true });
+}
+app.use('/uploads', express.static(uploadsPath));
 
 // ==========================================
 // 4. ROUTES API (après le parsing JSON)
@@ -71,12 +84,20 @@ app.use('/api/upload', uploadRoutes);
 app.use('/api/partners', partnerRoutes);
 app.use('/api/awards', awardRoutes);
 
+// ✅ CORRECTION SPÉCIFIQUE : Route /public pour correspondre exactement au fetch du frontend
+// Le frontend appelle '/api/agencies/public', on s'assure que ça matche
+app.get('/api/agencies/public', (req, res, next) => {
+  req.path = '/'; 
+  agencyRoutes(req, res, next);
+});
+
 // Route de test (Health check)
-app.get('/api/health', (_req, res) => { // ✅ CORRECTION : Ajout de "_" devant req
+app.get('/api/health', (_req, res) => {
   res.json({
     status: 'OK',
     message: 'Backend Élégance Pressing opérationnel',
     timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV,
   });
 });
 
@@ -89,9 +110,10 @@ app.use(errorHandler);
 // 6. DÉMARRAGE DU SERVEUR
 // ==========================================
 app.listen(PORT, () => {
-  logger.info(`🚀 Serveur backend démarré sur http://localhost:${PORT}`);
-  logger.info(`📍 Health check: http://localhost:${PORT}/api/health`);
-  logger.info(`🔧 Environnement: ${process.env.NODE_ENV}`);
+  logger.info(`🚀 Serveur backend démarré sur le port ${PORT}`);
+  logger.info(`📍 Health check: /api/health`);
+  logger.info(`🔧 Environnement: ${process.env.NODE_ENV || 'development'}`);
+  logger.info(`🛡️ CORS: Restreint aux origines autorisées uniquement`);
 });
 
 export default app;
