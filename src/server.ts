@@ -38,13 +38,24 @@ app.set('trust proxy', 1);
 app.use(helmet());
 
 // ✅ CONFIGURATION CORS SÉCURISÉE AVEC ORIGINES EXPLICITES
+// ✅ CONFIGURATION CORS "SMART" (Accepte automatiquement tous les domaines Vercel et Railway)
 app.use(cors({
-  origin: [
-    'https://frontend-1-coral-nine.vercel.app/', 
-    'https://elegance-pressing.up.railway.app',                                 
-    'http://localhost:3000',                                      
-    'http://localhost:5000'                                       
-  ],
+  origin: function (origin, callback) {
+    // Autoriser les requêtes sans origine (comme les tests ou les applications mobiles)
+    if (!origin) return callback(null, true);
+    
+    // Autoriser automatiquement tous les sous-domaines .vercel.app, .railway.app et localhost
+    if (
+      origin.endsWith('.vercel.app') || 
+      origin.endsWith('.railway.app') || 
+      origin.startsWith('http://localhost') ||
+      origin === 'https://elegance-pressing.com' // Votre futur vrai domaine
+    ) {
+      return callback(null, true);
+    }
+    
+    callback(new Error('Not allowed by CORS'));
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
