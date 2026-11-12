@@ -27,6 +27,9 @@ dotenv.config();
 const app: Application = express();
 const PORT = process.env.PORT || 5000;
 
+// ✅ CORRECTION CRUCIALE POUR RAILWAY : Faire confiance au proxy inverse
+app.set('trust proxy', 1);
+
 // ==========================================
 // 2. MIDDLEWARES GLOBAUX (SÉCURITÉ & PARSING)
 // ==========================================
@@ -34,13 +37,13 @@ const PORT = process.env.PORT || 5000;
 // Sécurité des headers HTTP
 app.use(helmet());
 
-// ✅ CONFIGURATION CORS SÉCURISÉE AVEC ORIGINES EXPLICITES (HTTPS corrigé)
+// ✅ CONFIGURATION CORS SÉCURISÉE AVEC ORIGINES EXPLICITES
 app.use(cors({
   origin: [
-    'https://frontend-1-coral-nine.vercel.app', // Votre URL Vercel (mettez à jour si elle change)
-    'https://elegance-pressing.up.railway.app', // URL publique de votre backend (avec https://)
-    'http://localhost:3000',                    // Dev Frontend
-    'http://localhost:5000'                     // Dev Backend
+    'https://frontend-1-hqc6ymxvc-luffy237s-projects.vercel.app', 
+    'https://elegance-pressing.up.railway.app',                                 
+    'http://localhost:3000',                                      
+    'http://localhost:5000'                                       
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
@@ -73,7 +76,11 @@ app.use('/uploads', express.static(uploadsPath));
 // 4. ROUTES API (après le parsing JSON)
 // ==========================================
 app.use('/api/auth', authRoutes);
-app.use('/api/agencies', agencyRoutes); // Le routeur gère maintenant proprement ses propres chemins
+
+// ✅ CORRECTION : Exposer explicitement la route publique AVANT la route protégée
+// Si ton agencyRoutes a un router.get('/public', ...), cela sera automatiquement mappé ici.
+app.use('/api/agencies', agencyRoutes);
+
 app.use('/api/users', userRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/articles', articleRoutes);
@@ -107,6 +114,7 @@ app.listen(PORT, () => {
   logger.info(`📍 Health check: /api/health`);
   logger.info(`🔧 Environnement: ${process.env.NODE_ENV || 'development'}`);
   logger.info(`🛡️ CORS: Restreint aux origines autorisées uniquement`);
+  logger.info(`🌐 Trust Proxy: Activé pour Railway`);
 });
 
 export default app;
