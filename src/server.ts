@@ -26,10 +26,10 @@ dotenv.config();
 const app: Application = express();
 const PORT = process.env.PORT || 5000;
 
-// ✅ 1. OBLIGATOIRE POUR RAILWAY (Corrige l'erreur X-Forwarded-For)
+// ✅ 1. OBLIGATOIRE POUR RAILWAY
 app.set('trust proxy', 1);
 
-// ✅ 2. CORS OUVERT (Temporairement pour éliminer toute erreur de blocage)
+// ✅ 2. CORS OUVERT
 app.use(cors({
   origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
@@ -53,17 +53,9 @@ if (!fs.existsSync(uploadsPath)) {
 }
 app.use('/uploads', express.static(uploadsPath));
 
-// ✅ 3. ROUTES
+// ✅ 3. ROUTES (SANS ASTUCE BIDON)
 app.use('/api/auth', authRoutes);
-
-// ✅ ASTUCE CRUCIALE : Le frontend appelle /api/agencies/public
-// On réécrit l'URL en interne pour que le router des agences le traite comme une demande de liste ('/')
-app.get('/api/agencies/public', (req, res, next) => {
-  (req as any).url = '/'; 
-  agencyRoutes(req, res, next);
-});
-
-app.use('/api/agencies', agencyRoutes);
+app.use('/api/agencies', agencyRoutes); // Gère automatiquement /api/agencies/public grâce à ton fichier routes
 app.use('/api/users', userRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/articles', articleRoutes);
